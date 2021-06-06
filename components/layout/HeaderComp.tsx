@@ -11,9 +11,7 @@ const HeaderComp = () => {
                 {/* 로고 */}
                 <div>logo</div>
             </div>
-            <Icon>
-                <FontAwesomeIcon icon={faBars} />
-            </Icon>
+            
         </Header>
     )
 }

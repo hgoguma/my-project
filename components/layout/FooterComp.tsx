@@ -1,7 +1,7 @@
 import React from 'react';
 import { Footer, Icon } from './styles'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHome, faSearch, faPlus } from '@fortawesome/free-solid-svg-icons'
+import { faHome, faSearch, faPlus, faBars } from '@fortawesome/free-solid-svg-icons'
 
 
 const FooterComp = () => {
@@ -15,6 +15,9 @@ const FooterComp = () => {
             </Icon>
             <Icon>
                 <FontAwesomeIcon icon={faPlus} />
+            </Icon>
+            <Icon>
+                <FontAwesomeIcon icon={faBars} />
             </Icon>
         </Footer>
     )

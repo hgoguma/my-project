@@ -2,11 +2,13 @@ import styled from '@emotion/styled';
 
 export const BodyContainer = styled.div`
     background-color: #eeecf1;
-    height: 100vh;
+    position: relative;
+    min-height: 100vh;
+    flex-direction: column;
 `;
 
 export const Container = styled.div`
-    height: calc(100% - 100px);
+    flex: 1;
 `;
 
 export const Footer = styled.footer`
