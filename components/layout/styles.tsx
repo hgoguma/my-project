@@ -13,6 +13,8 @@ export const Header = styled.header`
   justify-content: space-between;
   padding: 0 30px;
   align-items: center;
+  position: sticky;
+  top: 0;
 `;
 
 export const Icon = styled.div`
@@ -29,4 +31,12 @@ export const Footer = styled.footer`
     align-items: center;
     padding: 0 50px;
     font-size: 1.1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
 `;

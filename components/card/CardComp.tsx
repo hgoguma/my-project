@@ -19,7 +19,6 @@ const CardComp = () => {
             </CardHeader>
             <CardImage>
                 <img src={'https://i.redd.it/kduavprpv8y61.jpg'} />
-                {/* <div style={{background: 'https://i.redd.it/kduavprpv8y61.jpg', backgroundSize: 'cover'}} /> */}
             </CardImage>
             <CardControls>
                 <span>

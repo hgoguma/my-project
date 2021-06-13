@@ -1,15 +1,13 @@
 import styled from '@emotion/styled';
 
 export const Container = styled.div`
-    /* background-color: #948992; */
-    /* max-width: 300px; */
     margin: 0 auto;
     width: 100%;
     height: 100%;
     padding: 30px 0;
 `;
 
-export const SignUpContainer = styled.div`
+export const LoginContainer = styled.div`
     max-width: 300px;
     margin: 0 auto;
     padding: 30px 0;
@@ -47,7 +45,7 @@ export const SubmitContainer = styled.div`
     }
 `;
 
-export const LoginContainer = styled.div`
+export const SignUpContainer = styled.div`
     margin: 15px 0;
     padding: 0 10px;
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Footer, Icon } from './styles'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHome, faSearch, faPlus, faBars } from '@fortawesome/free-solid-svg-icons'
@@ -8,7 +9,7 @@ const FooterComp = () => {
     return (
         <Footer>
             <Icon>
-                <FontAwesomeIcon icon={faHome} />
+                <Link to="/main"><FontAwesomeIcon icon={faHome} /></Link>
             </Icon>
             <Icon>
                 <FontAwesomeIcon icon={faSearch} />
@@ -17,7 +18,7 @@ const FooterComp = () => {
                 <FontAwesomeIcon icon={faPlus} />
             </Icon>
             <Icon>
-                <FontAwesomeIcon icon={faBars} />
+                <Link to="/profile"><FontAwesomeIcon icon={faBars} /></Link>
             </Icon>
         </Footer>
     )
