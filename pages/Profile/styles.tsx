@@ -61,6 +61,7 @@ export const GalleryContainer = styled.div`
 
 export const ImageRow = styled.div`
     display: flex;
+    flex-wrap: wrap;
 `;
 
 export const Image = styled.div`

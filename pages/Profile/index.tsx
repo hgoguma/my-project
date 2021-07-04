@@ -1,9 +1,51 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import { ProfileHeader, ProfileArea, ProfileContainer, AvatarContainer, ProfileStatus, 
     Contents, GalleryContainer, ImageRow, Image } from './styles';
 import { Link, Redirect } from 'react-router-dom';
 
+import { createApi } from 'unsplash-js';
+
 const Profile = () => {
+
+    // type JSONResponse = {
+    //     data?: {
+    //         pokemon: Omit<PokemonData, 'fetchedAt'>
+    //     }
+    //     errors?: Array<{message: string}>
+    // }
+
+    interface Photo {
+        id: string;
+        width: number;
+        height: number;
+        urls: { full: string; regular: string; raw: string; small: string; thumb: string; };
+        color: string | null;
+        user: {
+            username: string;
+            name: string;
+        };
+        alt_description: any;
+
+    };
+
+    const [photosResponse, setPhotosResponse] = useState<Photo[]>([]);
+
+    
+
+    const api = createApi({
+        accessKey: ACCESS_KEY,
+    });
+    
+    useEffect(() => {
+        const fetchData = async () => {
+            const result = await api.search.getPhotos({ query: "cat", orientation: "landscape" })
+            if(result.type === 'success') {
+                let results = result.response.results
+                setPhotosResponse(results)
+            }
+        }
+        fetchData()
+    }, []);
 
     return (
         <div>
@@ -33,17 +75,14 @@ const Profile = () => {
             
             {/* image card area */}
             <GalleryContainer>
-                {/* 한 줄 */}
                 <ImageRow>
-                    <Image>
-                        <img src={""}></img>
-                    </Image>
-                    <Image>
-                        <img src={"https://s3.ap-northeast-2.amazonaws.com/elasticbeanstalk-ap-northeast-2-176213403491/media/magazine_img/magazine_286/84-%EC%8D%B8%EB%84%A4%EC%9D%BC.jpg"}></img>
-                    </Image>
-                    <Image>
-                        <img src={"https://s3.ap-northeast-2.amazonaws.com/elasticbeanstalk-ap-northeast-2-176213403491/media/magazine_img/magazine_286/84-%EC%8D%B8%EB%84%A4%EC%9D%BC.jpg"}></img>
-                    </Image>
+                    {photosResponse.map(item => {
+                        return (
+                            <Image key={item.id}>
+                                <img src={item.urls.small} alt={item.alt_description}/>
+                            </Image>
+                        )
+                    })}
                 </ImageRow>
             </GalleryContainer>
         </div>
